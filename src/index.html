@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>WorkeasyDemo</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+  <app-root></app-root>
+</body>
+<div id="displayNotification"></div>
+
+<div class="btn">CLOSE</div>
+<div id="wizParDiv2">popup</div>
+
+<script>
+var btn = document.querySelector('.btn');
+var wrapper = window.parent.document.getElementById('wizParDiv2');
+btn.addEventListener('click', closePopUp);
+function closePopUp() { wrapper.remove(); }
+</script>
+
+
+<!--div class="btn">CLOSE</div>
+<script>
+var btn = document.querySelector('.btn');
+var wrapper = window.parent.document.getElementById('wizParDiv0');
+btn.addEventListener('click', closePopUp);
+function closePopUp()
+{ wrapper.remove(); }
+</script-->
+</html>
