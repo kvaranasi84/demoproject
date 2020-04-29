@@ -18,11 +18,15 @@
 	clevertap.notificationCallback = function(msg){
 		//raise the notification viewed and clicked events in the callback
 		clevertap.raiseNotificationViewed();
-		window.parent.document.getElementById('wizParDiv2').innerHTML=msg.msgContent.html;
+		window.parent.document.getElementById('wizParDiv0').innerHTML=msg.msgContent.html;
 		console.log(JSON.stringify(msg.msgContent.html));//your custom rendering implementation here
 		var $button = jQuery("<button></button>");//element on whose click you want to raise the notification clicked event
 		$button.click(function(){
 		   clevertap.raiseNotificationClicked();
 		});
 	};
+
+	function recieveCleverTapData(data){
+		console.log(data)
+	}
 //</script>
