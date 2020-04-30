@@ -15,18 +15,25 @@
 	})();
 
 
-	clevertap.notificationCallback = function(msg){
+	/*clevertap.notificationCallback = function(msg){
 		//raise the notification viewed and clicked events in the callback
 		clevertap.raiseNotificationViewed();
-		window.parent.document.getElementById('wizParDiv0').innerHTML=msg.msgContent.html;
+		//In case of javascript
+		//var modal = document.getElementById("myModal");
+		//modal.style.display = "block";
+		window.parent.document.getElementById('wizParDiv0').innerText=msg.kv.event;
 		console.log(JSON.stringify(msg.msgContent.html));//your custom rendering implementation here
 		var $button = jQuery("<button></button>");//element on whose click you want to raise the notification clicked event
 		$button.click(function(){
 		   clevertap.raiseNotificationClicked();
 		});
-	};
+	};*/
 
 	function recieveCleverTapData(data){
 		console.log(data)
+	}
+
+	function recieveCleverTapData(){
+		console.log("clever tap data recieved")
 	}
 //</script>

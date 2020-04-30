@@ -1,15 +1,16 @@
 import { Injectable, Inject } from '@angular/core';
+declare const clevertap:any;
 
 @Injectable({
     providedIn: 'root'
 })
 export class CleverTapService {
-
-    clevertap ={event:[], profile:[], account:[], onUserLogin:[], notifications:[], privacy:[]};
-    constructor(){            //  replace with the CLEVERTAP_ACCOUNT_ID with the actual ACCOUNT ID value from your Dashboard -> Settings page
-        this.clevertap.account.push({"id": "TEST-988-Z8K-785Z"});
-        this.clevertap.privacy.push({optOut: false}); //set the flag to true, if the user of the device opts out of sharing their data
-        this.clevertap.privacy.push({useIP: false}); //set the flag to true, if the user agrees to share their IP data
+    //clevertap ={event:[], profile:[], account:[], onUserLogin:[], notifications:[], privacy:[]};
+    constructor(){     
+             //  replace with the CLEVERTAP_ACCOUNT_ID with the actual ACCOUNT ID value from your Dashboard -> Settings page
+        clevertap.account.push({"id": "TEST-988-Z8K-785Z"});
+        clevertap.privacy.push({optOut: false}); //set the flag to true, if the user of the device opts out of sharing their data
+        clevertap.privacy.push({useIP: false}); //set the flag to true, if the user agrees to share their IP data
         this.cleverTap();
     }
     
@@ -24,11 +25,11 @@ export class CleverTapService {
 
     
       pushProfile(data){
-        this.clevertap.profile.push(data);
+        clevertap.profile.push(data);
       }
 
       publishEvent(data){
-        this.clevertap.event.push(data)
+        clevertap.event.push(data)
       }
 
 
