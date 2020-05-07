@@ -20,9 +20,17 @@ declare const jQuery:any;
     constructor(private modalService: NgbModal ,@Inject(DOCUMENT) document) {
      //this.open("test")
     }
+
+    registerCleverTapPopup(){
+       /* var btn = document.querySelector('.btn');
+        var wrapper = window.parent.document.getElementById('wizParDiv0');
+        btn.addEventListener('click', closePopUp);
+        function closePopUp() { wrapper.remove(); }*/
+    }
       
     ngAfterViewInit() {
       //console.log(this.myDiv.nativeElement.innerHTML);
+      this.registerCleverTapPopup();
     }
 
     open(content) {

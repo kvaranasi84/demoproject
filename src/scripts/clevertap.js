@@ -1,7 +1,7 @@
 //<script type="text/javascript">
 	var clevertap = {event:[], profile:[], account:[], onUserLogin:[], notifications:[], privacy:[]};
 		//  replace with the CLEVERTAP_ACCOUNT_ID with the actual ACCOUNT ID value from your Dashboard -> Settings page
-	clevertap.account.push({"id": "TEST-988-Z8K-785Z"});
+	clevertap.account.push({"id": "988-Z8K-785Z"});
 	clevertap.privacy.push({optOut: false}); //set the flag to true, if the user of the device opts out of sharing their data
 	clevertap.privacy.push({useIP: false}); //set the flag to true, if the user agrees to share their IP data
 	
@@ -15,19 +15,23 @@
 	})();
 
 
-	/*clevertap.notificationCallback = function(msg){
+	clevertap.notificationCallback = function(msg){
 		//raise the notification viewed and clicked events in the callback
 		clevertap.raiseNotificationViewed();
 		//In case of javascript
 		//var modal = document.getElementById("myModal");
 		//modal.style.display = "block";
-		window.parent.document.getElementById('wizParDiv0').innerText=msg.kv.event;
+		var toastElement = document.getElementById("wizParDiv0");
+		if (toastElement.style.display === "none") {
+			toastElement.style.display = "block";
+		} 
+		window.parent.document.getElementById('wzrkPPdscr').innerText=msg.kv.event;
 		console.log(JSON.stringify(msg.msgContent.html));//your custom rendering implementation here
 		var $button = jQuery("<button></button>");//element on whose click you want to raise the notification clicked event
 		$button.click(function(){
 		   clevertap.raiseNotificationClicked();
 		});
-	};*/
+	};
 
 	function recieveCleverTapData(data){
 		console.log(data)

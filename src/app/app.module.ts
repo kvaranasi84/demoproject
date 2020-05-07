@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DisplayComponent } from '../displaySection/display.component';
 import { DisplayModule } from 'src/displaySection/display.module';
+import { ToasterComponent } from 'src/toaster/toaster.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DisplayComponent
+    DisplayComponent,
+    ToasterComponent
   ],
   imports: [
     BrowserModule,
